@@ -1,0 +1,304 @@
+{
+  "info": {
+    "name": "Biblioteca API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Livros",
+      "item": [
+        {
+          "name": "Criar Livro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Engenharia de Software\",\n  \"autor\": \"Sommerville\",\n  \"totais\": 3,\n  \"disponiveis\": 3\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/livros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "livros"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar Livros",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/livros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "livros"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Detalhar Livro",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/livros/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "livros",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Atualizar Livro",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Engenharia de Software 10ed\",\n  \"autor\": \"Sommerville\",\n  \"totais\": 4,\n  \"disponiveis\": 4\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/livros/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "livros",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir Livro",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/livros/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "livros",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Usu\u00e1rios",
+      "item": [
+        {
+          "name": "Criar Aluno",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Jo\\u00e3o Silva\",\n  \"documento\": \"RA2025-001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/alunos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "alunos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Criar Professor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Maria Oliveira\",\n  \"documento\": \"MAT-7788\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/professores",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "professores"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar Usu\u00e1rios",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Detalhar Usu\u00e1rio",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir Usu\u00e1rio",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Empr\u00e9stimos",
+      "item": [
+        {
+          "name": "Criar Empr\u00e9stimo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"livroId\": 1,\n  \"dataPrevista\": \"2025-10-10\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/emprestimos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "emprestimos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar Empr\u00e9stimos Abertos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/emprestimos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "emprestimos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar Empr\u00e9stimos Atrasados",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/emprestimos?atrasados=true",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "emprestimos"
+              ],
+              "query": [
+                {
+                  "key": "atrasados",
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Devolver Empr\u00e9stimo",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/emprestimos/1/devolucao",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "emprestimos",
+                "1",
+                "devolucao"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/rest/v1/api"
+    }
+  ]
+}
